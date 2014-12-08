@@ -17,6 +17,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+        <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/fullcalendar.css" rel="stylesheet">
+    
     <link href="css/eveningclasses.css" rel="stylesheet">
   </head>
 
@@ -68,12 +71,17 @@
     </nav>
 
     <div class="container">
-
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Evening Classes Booking and Management</h1>
       </div>
-
+      <div class="row">
+      	  <div class="col-md-4">
+	      		<p> Classes </p>
+	      </div>
+	      <div class="col-md-8">
+	      		<div id="calendar"></div>
+	      </div>
+	  </div>
     </div><!-- /.container -->
 
 
@@ -82,5 +90,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  
+    <script src="js/moment.min.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+  	<script src="js/timetable.js"></script>
 </body></html>
