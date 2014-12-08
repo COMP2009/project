@@ -1,0 +1,39 @@
+table {
+	width: 100%;
+}
+a {
+	width: 175px;
+	font-size: 22px;
+	padding: 25px 5px;
+	float: left;
+	border: solid;
+}
+select {
+	width: 250px;
+	font-size: 22px;
+	padding: 25px 5px;
+	float: left;
+}
+.Days {
+	text-align: center;
+	width: 113px;
+	padding: 30px;
+	border: solid;
+}
+#SaveSubmit {
+	font-size: 22px;
+	padding: 25px 5px;
+	float: right;
+}
+
+.login {
+	text-align: center;
+	margin-top: 250px;
+	margin-left: 540px;
+	width: 250px;
+	border-style: solid;
+	padding: 10px;
+
+}
+
+
