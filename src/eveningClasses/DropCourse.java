@@ -87,7 +87,7 @@ public class DropCourse extends HttpServlet {
 			student=it.next();
 			if(student.getId()==studentid)
 			{
-				student.deleteCourse(course);
+				
 				
 				break;
 				
@@ -123,6 +123,21 @@ public class DropCourse extends HttpServlet {
 				System.out.print(c1.getCourseName());
 			}
 		
+			Iterator<Course> item1 = home.data.courses.iterator();
+			 int counter=0;
+			 
+			 Course courses;
+			while(item1.hasNext())
+			 {
+				courses=item1.next();
+				if(course.getId()==courses.getId())
+				{
+					
+					break;
+				}counter++;
+			 }
+			home.data.courses.get(counter).deleteStudent(student);
+			
 		request.getRequestDispatcher("/temptimetable.jsp").forward(request,response);
 	}
 

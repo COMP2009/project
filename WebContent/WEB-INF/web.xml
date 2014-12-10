@@ -79,4 +79,24 @@
     <servlet-name>Confirm</servlet-name>
     <url-pattern>/Confirm</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logout</display-name>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>eveningClasses.logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cancel</display-name>
+    <servlet-name>Cancel</servlet-name>
+    <servlet-class>eveningClasses.Cancel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cancel</servlet-name>
+    <url-pattern>/Cancel</url-pattern>
+  </servlet-mapping>
 </web-app>

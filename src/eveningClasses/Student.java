@@ -40,8 +40,15 @@ public class Student {
 	}
 	public boolean isEnrolled(Course checkItem)
 	{
-		boolean b = Arrays.asList(courseListTemp).contains(checkItem);	
-		return b;
+	   Iterator<Course> i = courseList.iterator();
+	   while(i.hasNext())
+	   {
+		  Course c = i.next();
+		  if(c.getId()==checkItem.getId())
+			  return true;
+		   
+	   }
+	   return false;
 	}
 	public void setEnrolled(Course addItem)
 	{
@@ -52,7 +59,7 @@ public class Student {
 		Iterator<Course> i = courseList.iterator();
 		while(i.hasNext())
 		{
-			Course c = i.next();
+			 i.next();
 			i.remove();
 			
 		}
@@ -84,6 +91,9 @@ public class Student {
 	}
 	public void setCourseList(List<Course> courseList) {
 		this.courseList = courseList;
+	}
+	public void setCourseListTemp(List<Course> courseList) {
+		this.courseListTemp = courseList;
 	}
 	public void deleteCourse(Course course)
 	{

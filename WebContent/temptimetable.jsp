@@ -17,11 +17,14 @@
 <h1>EVENING CLASSES</h1>
 </div>
 <div id="name">
-<p>Welcome,<%=session.getAttribute("user") %></p>
+<p>WELCOME,  <%=session.getAttribute("user") %></p>
 </div>
+<a href="logout" class="myButtonLogout">Logout</a>
 
-<p>Welcome,<%=session.getAttribute("user") %></p>
+
 <% Course classes[][][] = new Course[6][7][3];
+Course clash = (Course)session.getAttribute("course");
+int id=clash.getId();
    int count[][] = new int[6][7];
    
 	int studentid = (Integer) session.getAttribute("studentid");
@@ -37,13 +40,13 @@
 			break;
 		}
 	 }
-	 System.out.println("hello");
+
 	 List<Course> courseList = student.getCourseListTemp();
 	 Iterator<Course> c = courseList.iterator();
 		while(c.hasNext())
 		{
 			Course c1 = c.next();
-			System.out.print(c1.getCourseName());
+
 		}
 		
 
@@ -117,23 +120,34 @@ while(itera.hasNext())
 <table width=80%>
 <tr><td>Time</td><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td><td>Sunday</td></tr>
 
-<% for(int m=0; m<6; m++){   %>
+<% 
+boolean clashes=false;
+for(int m=0; m<6; m++){   %>
   <tr><td><%=(m+16)*100 %></td>
-  <% for(int n=0; n<7; n++){ %><td> 
-    <% for(int l=0; l< count[m][n];l++){ %> 
-      
+  <% for(int n=0; n<7; n++){
+	  boolean clashvar=false;%><td> 
+    <% for(int l=0; l< count[m][n];l++){  
+      if(count[m][n]>0 && classes[m][n][l].getId()==id)
+        {clashvar = true; clashes=true;}}
+        for(int l=0; l< count[m][n];l++){
+        	if(clashvar){%>
+      <a href="CourseDetails?value=<%=classes[m][n][l].getId()%>" class="myButtonClash"><%=classes[m][n][l].getCourseName() %></a>
+      <%}
+        	else{  %>
       <a href="CourseDetails?value=<%=classes[m][n][l].getId()%>" class="myButton"><%=classes[m][n][l].getCourseName() %></a>
       <p></p>
-      <%} %>
+      <%}} %>
       </td><%} %>
       </tr><%} %>
 
 </table>
 </div>
+<%if(clashes) %>
+<div id="error"> Red denotes clashes</div>
 <div id="changes"	>	       	        
 <a href="Confirm" class="myButtonChanges" >Confirm Changes</a>
 <br>
-      <a href="timetable.jsp" class="myButtonChanges" >Cancel</a>
+      <a href="Cancel" class="myButtonChanges" >Cancel</a>
 </div>
 	</div>
 </body>

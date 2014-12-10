@@ -8,7 +8,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Coursework</title>
 </head>
 <body>
 <div id="wrapper">
@@ -68,9 +68,7 @@ while(itera.hasNext())
 <p><b>Day : </b><%=course.getDay() %></p>
 <p><b>Time : </b><%=course.getTime() %></p>
 <p><b>Details : </b><%=course.getCourseDetails() %></p>
-<a href="coursedetailswork.jsp">
-      <button class="myButtonSubmit">Coursework  </button></a>
-      <p></p>
+<p><b>Course Work : </b><%=course.getCourseWork() %></p>
 <% Student student=null;
 Iterator<Student> item = home.data.students.iterator();
 while (item.hasNext()) {

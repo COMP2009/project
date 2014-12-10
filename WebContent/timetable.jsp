@@ -17,8 +17,18 @@
 <h1>EVENING CLASSES</h1>
 </div>
 <div id="name">
-<p>Welcome,<%=session.getAttribute("user") %></p>
+WELCOME,  <%=session.getAttribute("user") %>
 </div>
+
+<a href="logout" class="myButtonLogout">Logout</a>
+<p></p>
+<%String full = (String)request.getAttribute("full");
+if(full!=null){ %>
+   <div id="error">
+   The course you are trying to enroll onto is full.
+   </div>
+<%} %>
+
 <% Course classes[][][] = new Course[6][7][3];
    int count[][] = new int[6][7];
    List<Student> studeents = home.data.students;
@@ -111,7 +121,6 @@ while(itera.hasNext())
 </table>
 </div>
    
-
 	</div>
 </body>
 </html>

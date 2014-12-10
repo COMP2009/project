@@ -1,22 +1,25 @@
 package eveningClasses;
-import java.util.*;
 public class Course {
  
 	private int id;
 	private int time;
 	private String courseName;
 	private String day;
+	private String coursework;
+	private String coursedetails;
 	private int numberOfStudents;
-	private List<Student> studentList = new ArrayList<Student>();
 	
-	public Course(int id, int time, String courseName, String day) {
+	
+	public Course(int id, int time, String courseName, String day, String coursedetails, String coursework) {
 		super();
 		this.id = id;
 		this.time = time;
 		this.courseName = courseName;
 		this.day = day;
-		this.studentList = null;
+		
 		this.numberOfStudents = 0;
+		this.coursework=coursework;
+		this.coursedetails=coursedetails;
 		
 	}
 
@@ -44,6 +47,12 @@ public class Course {
 	public String getCourseName() {
 		return courseName;
 	}
+	public String getCourseDetails() {
+		return coursedetails;
+	}
+	public String getCourseWork() {
+		return coursework;
+	}
 
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
@@ -59,7 +68,7 @@ public class Course {
 	
 	public boolean isFull()
 	{
-		if(numberOfStudents==50)
+		if(numberOfStudents==1)
 			return true;
 		else
 			return false;
@@ -67,19 +76,12 @@ public class Course {
 	
 	public void addStudent(Student student)
 	{
-		studentList.add(student);
 		numberOfStudents++;
 	}
 	
 	public void deleteStudent(Student student)
 	{
-		Iterator<Student> it = studentList.iterator();
-        while (it.hasNext()) {
-            Student user = it.next();
-            if (student.getId()==(user.getId())) {
-                it.remove();
-            }
-        }
+		
         numberOfStudents--;
 	}
 	
