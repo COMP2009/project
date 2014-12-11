@@ -28,10 +28,10 @@
 
 <div id="signin">
 <form action="Validator" method="post">
-User: <input type="text" name="uname"><br>
-Password: <input type="password" name="pass"><br>
+User: <input type="text" id="login_username" name="uname"><br>
+Password: <input type="password" id="login_password" name="pass"><br>
 
-<button class="myButtonSubmit" type="submit" >SignIn</button>
+<button class="myButtonSubmit" id="login_submit" type="submit" >SignIn</button>
 
 </form>
 
